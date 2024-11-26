@@ -2,7 +2,7 @@
 <h2>This repository is made for footbal salon database.</h2>
 <h4>Follow the steps below to install this system</h4>
 Clone the repository.
-<p>git clone https://github.com/jumahmohammadi/laravelClass.git</p>
+<p>git clone (https://github.com/Mohsen-Parsa11/salon-project.git)</p>
 
 <p>After cloning the repository go inside the project folder and run the below command</p>
 <code>composer update</code>
