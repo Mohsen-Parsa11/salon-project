@@ -10,7 +10,7 @@
 <h1>This repository is made for Footbal Salon database </h2>
 <h2>Follow the steps below to install this system</h2>
 Clone the repository: <br>
-<code>git clone git@github.com:Mohsen-Parsa11/salon-project.git</code>
+<code>git clone https://github.com/Mohsen-Parsa11/salon-project.git</code>
 
 <p>After cloning the repository go inside the project folder and run the below command</p>
 <code>composer update</code>
