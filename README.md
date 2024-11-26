@@ -15,7 +15,7 @@ Clone the repository: <br>
 <p>After cloning the repository go inside the project folder and run the below command</p>
 <code>composer update</code>
 
-<p>Make a copy of the .env.example file, name it .env, and name your database <code>salonproject.</code></p>
+<p>Make a copy of the .env.example file, name it .env, and name your database <code>salonproject</code>.</p>
 <h4>run these commands</h4>
 <code>php artisan migrate</code><br>
 <code>php artisan key:generate</code>
