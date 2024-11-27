@@ -1,3 +1,3 @@
 <div class="fw-bold">
-    Dashboard
+    <h5>Dashboard</h5>
 </div>

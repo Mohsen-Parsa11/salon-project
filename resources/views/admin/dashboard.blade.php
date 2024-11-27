@@ -2,7 +2,7 @@
 
    @section('breadcrumb')
    <x-breadcrumb pageTitle="dashboard">
-    {{-- slot component --}}
+    <x-slot name="links"></x-slot>
   </x-breadcrumb>
    @endsection
     
