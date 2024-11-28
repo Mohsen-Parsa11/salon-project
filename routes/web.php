@@ -16,7 +16,11 @@ Route::get('', function () {
 Route::prefix('admin')->group(function () {
 
     Route::get('dashboard', [myController::class, 'dashboard']);
-    Route::get('users/user', [userController::class, 'addUser'])->name('users');
+
+    Route::get('users/user', [userController::class, 'User'])->name('users');
+    Route::get('users/addUsers', [userController::class,'addUser']);
+    Route::post('users/save', [userController::class,'save']);
+
     Route::get('reservation/reserve', [reserveController::class, 'reserve'])->name('reserve');
     Route::get('times/time', [timesController::class, 'addTimes'])->name('times');
     Route::get('setting/set', [settingController::class, 'addSetting'])->name('setting');
