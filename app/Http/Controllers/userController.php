@@ -18,7 +18,6 @@ class userController extends Controller
 
     public function save(Request $request){
 
-
         $request->validate([
             'user_name'=>'required|min:3|max:20|unique:users,name',
             'user_email'=>'required',
