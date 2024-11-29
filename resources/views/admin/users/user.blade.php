@@ -40,8 +40,12 @@
                                         <td>{{$user->name}}</td>
                                         <td>{{$user->email}}</td>
                                         <td>
-                                            <a href="#" class="btn btn-primary">Edit</a>
-                                            <button class="btn btn-danger text-white">Delete</button>
+                                            <a href="edit/{{$user->id}}" class="btn btn-primary">Edit</a>
+                                            <form action="deleteUser/{{$user->id}}" method="POST" class="d-inline">
+                                                @csrf
+                                                @method('DELETE')
+                                                <button class="btn btn-danger text-white" onclick="return confirm('Are you sure to delete this field?')">Delete</button>
+                                            </form>
                                         </td>
                                       </tr>
                                       @endforeach

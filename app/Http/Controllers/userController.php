@@ -32,4 +32,24 @@ class userController extends Controller
         $users->save();
         return redirect('admin/users/user');
     }
+
+    public function editUser($user_id){
+        $user= User::find($user_id);
+        return view('admin.users.editUser', ['users'=>$user]);
+    }
+
+    public function updateUser(Request $request){
+       $id= $request->id;
+       $users= User::find($id);
+        
+       $users->name= $request->user_name;
+       $users->email= $request->user_email;
+       $users->password= $request->user_password;
+       $users->save();
+       return redirect('admin/users/user');
+    }
+    public function deleteUser($user_id){
+        User::destroy($user_id);
+        return redirect('admin/users/user');
+    }
 }

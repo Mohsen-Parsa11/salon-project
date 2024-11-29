@@ -20,6 +20,9 @@ Route::prefix('admin')->group(function () {
     Route::get('users/user', [userController::class, 'User'])->name('users');
     Route::get('users/addUsers', [userController::class,'addUser']);
     Route::post('users/save', [userController::class,'save']);
+    Route::get('users/edit/{id}', [userController::class,'editUser']);
+    Route::put('users/update', [userController::class,'updateUser']);
+    Route::delete('users/deleteUser/{id}', [userController::class,'deleteUser']);
 
     Route::get('reservation/reserve', [reserveController::class, 'reserve'])->name('reserve');
     Route::get('times/time', [timesController::class, 'addTimes'])->name('times');
