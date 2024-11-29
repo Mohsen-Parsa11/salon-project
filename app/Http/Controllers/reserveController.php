@@ -23,4 +23,10 @@ class reserveController extends Controller
         $reserve->save();
         return redirect('admin/reservation/reserve');
     }
+
+
+    public function reserveDelete($res_id){
+        Reservation::destroy($res_id);
+        return redirect('admin/reservation/reserve');
+    }
 }

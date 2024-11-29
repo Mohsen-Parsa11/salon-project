@@ -27,6 +27,7 @@ Route::prefix('admin')->group(function () {
     Route::get('reservation/reserve', [reserveController::class, 'reserve'])->name('reserve');
     Route::get('reservation/addReserve', [reserveController::class, 'addReserve']);
     Route::post('reservation/save', [reserveController::class, 'saveReserve']);
+    Route::delete('reservation/reserveDelete/{id}', [reserveController::class, 'reserveDelete']);
 
     Route::get('times/time', [timesController::class, 'addTimes'])->name('times');
     Route::get('setting/set', [settingController::class, 'addSetting'])->name('setting');

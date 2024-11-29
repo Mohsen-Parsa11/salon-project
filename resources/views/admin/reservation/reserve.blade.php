@@ -41,9 +41,9 @@
                                         <td>{{$reserve->note}}</td>
                                         <td>
                                             <a href="#" class="btn btn-primary">Edit</a>
-                                            <form action="#" method="POST" class="d-inline">
+                                            <form action="reserveDelete/{{$reserve->id}}" method="POST" class="d-inline">
                                                 @csrf
-                                                {{-- @method('DELETE') --}}
+                                                @method('DELETE')
                                                 <button class="btn btn-danger text-white" onclick="return confirm('Are you sure to delete this field?')">Delete</button>
                                             </form>
                                         </td>
