@@ -40,7 +40,7 @@
                                         <td>{{$reserve->status}}</td>
                                         <td>{{$reserve->note}}</td>
                                         <td>
-                                            <a href="#" class="btn btn-primary">Edit</a>
+                                            <a href="editReserve/{{$reserve->id}}" class="btn btn-primary">Edit</a>
                                             <form action="reserveDelete/{{$reserve->id}}" method="POST" class="d-inline">
                                                 @csrf
                                                 @method('DELETE')

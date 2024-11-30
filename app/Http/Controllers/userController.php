@@ -40,6 +40,12 @@ class userController extends Controller
     public function updateUser(Request $request){
        $id= $request->id;
        $users= User::find($id);
+
+       $request->validate([
+        'user_name'=>'required|min:3|max:20|unique:users,name,'. $id,
+        'user_email'=>'required',
+        'user_password'=>'required'
+    ]);
         
        $users->name= $request->user_name;
        $users->email= $request->user_email;
