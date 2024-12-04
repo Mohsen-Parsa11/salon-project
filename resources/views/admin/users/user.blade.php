@@ -26,7 +26,10 @@
                                         <tr>
                                             <th class="border-top-0">No</th>
                                             <th class="border-top-0">Name</th>
+                                            <th class="border-top-0">Last Name</th>
                                             <th class="border-top-0">Email</th>
+                                            <th class="border-top-0">Photo</th>
+                                            <th class="border-top-0">Role</th>
                                             <th class="border-top-0">Action</th>
                                         </tr>
                                     </thead>
@@ -38,7 +41,14 @@
                                       <tr>
                                         <td>{{$counter++}}</td>
                                         <td>{{$user->name}}</td>
+                                        <td>{{$user->last_name}}</td>
                                         <td>{{$user->email}}</td>
+                                        <td>
+                                            @if ($user->photo)
+                                            <img style="width:70px; height:60px;" src="{{asset('uploads/'.$user->photo)}}" alt="user">
+                                            @endif    
+                                        </td>
+                                        <td>{{$user->role}}</td>
                                         <td>
                                             <a href="edit/{{$user->id}}" class="btn btn-primary">Edit</a>
                                             <form action="deleteUser/{{$user->id}}" method="POST" class="d-inline">
