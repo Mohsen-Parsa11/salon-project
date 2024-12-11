@@ -68,6 +68,10 @@
                 </div>
                 <!-- ============================================================== -->
                 <!-- End Logo -->
+                <div class="d-flex ">
+                    <a class="ms-3" href="{{URL::to('admin/change_language/en')}}">English</a>
+                    <a class="ms-3" href="{{URL::to('admin/change_language/fa')}}">فارسی</a>
+                </div>
                 <!-- ============================================================== -->
                 <div class="navbar-collapse collapse" id="navbarSupportedContent" data-navbarbg="skin5">
                    
@@ -119,7 +123,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{URL::to('admin/dashboard')}}"
                                 aria-expanded="false">
                                 <i class="far fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Dashboard</span>
+                                <span class="hide-menu">{{__('labels.dashboard')}}</span>
                             </a>
                         </li>
 
@@ -127,7 +131,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('users')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-users" aria-hidden="true"></i>
-                                <span class="hide-menu">Users</span>
+                                <span class="hide-menu">{{__('labels.users')}}</span>
                             </a>
                         </li>
 
@@ -135,7 +139,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('reserve')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-table" aria-hidden="true"></i>
-                                <span class="hide-menu">Reservation</span>
+                                <span class="hide-menu">{{__('labels.reservation')}}</span>
                             </a>
                         </li>
 
@@ -143,7 +147,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('times')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-clock" aria-hidden="true"></i>
-                                <span class="hide-menu">Times</span>
+                                <span class="hide-menu">{{__('labels.times')}}</span>
                             </a>
                         </li>
 
@@ -151,7 +155,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="{{route('setting')}}"
                                 aria-expanded="false">
                                 <i class="fa fa-tags" aria-hidden="true"></i>
-                                <span class="hide-menu">Setting</span>
+                                <span class="hide-menu">{{__('labels.setting')}}</span>
                             </a>
                         </li>
 
@@ -159,7 +163,7 @@
                             <a class="sidebar-link waves-effect waves-dark sidebar-link" href="#"
                                 aria-expanded="false">
                                 <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="hide-menu">Profile</span>
+                                <span class="hide-menu">{{__('labels.profile')}}</span>
                             </a>
                         </li>
 
@@ -167,7 +171,7 @@
                             <form class="sidebar-link waves-effect waves-dark sidebar-link" method="" action="#"
                                 aria-expanded="false">
                                 <i class="fa fa-lock" aria-hidden="true"></i>
-                                <span class="hide-menu">LogOut</span>
+                                <span class="hide-menu">{{__('labels.logout')}}</span>
                             </form>
                         </li>
                        
