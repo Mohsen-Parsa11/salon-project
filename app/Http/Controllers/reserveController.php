@@ -4,11 +4,13 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use App\Models\Reservation;
+use Session;
+
 
 class reserveController extends Controller
 {
     public function reserve(){
-        $reserve= Reservation::all();
+        $reserve= Reservation::paginate(6);
         return view('admin.reservation.reserve',['reserves'=>$reserve]);
     }
 
@@ -19,13 +21,19 @@ class reserveController extends Controller
     public function saveReserve(Request $request){
 
         $request->validate([
-            'res_status'=>'required|min:3|max:10 |unique:reservations,status',
+            'res_status'=>'required|min:3|max:10',
             'res_note'=>'required'
         ]);
         $reserve= new Reservation();
         $reserve->status= $request->res_status;
         $reserve->note= $request->res_note;
-        $reserve->save();
+        if($reserve->save()){
+            Session::flash('message','reservation inserted successfully');            
+            Session::flash('alert','alert-success');            
+        }else{
+            Session::flash('message','insert faild');            
+            Session::flash('alert','alert-danger');     
+        }
         return redirect('admin/reservation/reserve');
     }
 
@@ -37,18 +45,31 @@ class reserveController extends Controller
     public function updateReserve(Request $request){
         $id= $request->id;
         $request->validate([
-            'status'=>'required|min:3|max:10 |unique:reservations,status,'. $id,
+            'status'=>'required|min:3|max:10',
             'note'=>'required'
         ]);
         $reserve= Reservation::find($id);
         $reserve->status= $request->status;
         $reserve->note= $request->note;
-        $reserve->save();
+        if($reserve->save()){
+            Session::flash('message','reservation updated successfully');            
+            Session::flash('alert','alert-success');            
+        }else{
+            Session::flash('message','update faild');            
+            Session::flash('alert','alert-danger');     
+        }
         return redirect('admin/reservation/reserve');
     }
 
     public function reserveDelete($res_id){
-        Reservation::destroy($res_id);
+        
+        if(Reservation::destroy($res_id)){
+            Session::flash('message','reservation deleted successfully');            
+            Session::flash('alert','alert-success');            
+        }else{
+            Session::flash('message','delete faild');            
+            Session::flash('alert','alert-danger');     
+        }
         return redirect('admin/reservation/reserve');
     }
 }

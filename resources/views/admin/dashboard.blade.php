@@ -4,7 +4,7 @@
    <x-breadcrumb pageTitle="dashboard">
     <x-slot name="links"></x-slot>
   </x-breadcrumb>
-   @endsection
+   @endsection 
     
    @section('mainContent')
    <!-- ============================================================== -->

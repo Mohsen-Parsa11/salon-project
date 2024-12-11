@@ -10,6 +10,12 @@
 
 @section('mainContent')
 
+@section('alertMessage')
+@if(Session::has('message'))
+<x-message cls="{{Session::get('alert')}}" text="{{Session::get('message')}}"></x-message>  
+@endif
+@endsection
+
   <!-- Start Page Content -->
                 <!-- ============================================================== -->
                 <div class="row">
@@ -51,6 +57,7 @@
                                       @endforeach
                                     </tbody>
                                 </table>
+                                {{$reserves->links('pagination::bootstrap-5')}}
                             </div>
                         </div>
                     </div>
@@ -63,3 +70,12 @@
 
 
 @endsection
+
+<script>
+    setTimeout(() => {
+        var alerts= document.getElementsByClassName("alert");
+        if(alerts.length > 0){
+            alerts[0].remove();
+        }
+    }, 3000);
+</script>
