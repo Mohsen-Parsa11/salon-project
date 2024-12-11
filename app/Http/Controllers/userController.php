@@ -54,9 +54,9 @@ class userController extends Controller
     ]);
         
        $users->name= $request->user_name;
-       $users->last_name= $request->user_lname;
+       $users->last_name= $request->last_name;
        $users->email= $request->user_email;
-       $users->role= $request->user_role;
+       $users->role= $request->role;
        $users->password= $request->user_password;
 
        $photo_address2= $users->photo;
@@ -76,14 +76,15 @@ class userController extends Controller
     }
 
     public function deleteUser($user_id){
-        User::destroy($user_id);
-
-        $photo_address2= User::find($user_id)->photo;
-        $old_photo_address= public_path().'/uploads/'.$photo_address2;
+        
+        $photo_address= User::find($user_id)->photo;
+        $old_photo_address= public_path().'/uploads/'.$photo_address;
         
         if(file_exists($old_photo_address)){
             unlink($old_photo_address);
         }
+
+        User::destroy($user_id);
         return redirect('admin/users/user');
     }
 }
